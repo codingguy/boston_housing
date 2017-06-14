@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[145]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11851,7 +11851,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
@@ -11881,7 +11881,21 @@ div#notebook {
 <span class="k">print</span> <span class="s2">&quot;Maximum price: ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maximum_price</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Mean price: ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_price</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Median price ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">median_price</span><span class="p">)</span>
-<span class="k">print</span> <span class="s2">&quot;Standard deviation of prices: ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">std_price</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Standard deviation of prices: ${:,.2f}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">std_price</span><span class="p">)</span>
+
+
+<span class="c1"># Calculate others</span>
+<span class="k">def</span> <span class="nf">cal_statistics</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">display_name</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;----&quot;</span><span class="p">,</span> <span class="n">display_name</span><span class="p">,</span> <span class="s2">&quot;----&quot;</span>
+    <span class="k">print</span> <span class="s2">&quot;Minimum&quot;</span><span class="p">,</span> <span class="n">display_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">: {:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s2">&quot;Maximum&quot;</span><span class="p">,</span> <span class="n">display_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">: {:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s2">&quot;Mean&quot;</span><span class="p">,</span> <span class="n">display_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">: {:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s2">&quot;Median&quot;</span><span class="p">,</span> <span class="n">display_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">: {:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s2">&quot;STD of&quot;</span><span class="p">,</span> <span class="n">display_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">: {:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">subject</span><span class="p">))</span>
+
+<span class="n">cal_statistics</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;RM&#39;</span><span class="p">],</span> <span class="s2">&quot;RM&quot;</span><span class="p">)</span>
+<span class="n">cal_statistics</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">],</span> <span class="s2">&quot;LSTAT&quot;</span><span class="p">)</span>
+<span class="n">cal_statistics</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PTRATIO&#39;</span><span class="p">],</span> <span class="s2">&quot;PTRATIO&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11901,6 +11915,26 @@ Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
 Standard deviation of prices: $165,171.13
+
+
+---- RM ----
+Minimum RM 	: 3.56
+Maximum RM 	: 8.40
+Mean RM 	: 6.24
+Median RM 	: 6.18
+STD of RM 	: 0.64
+---- LSTAT ----
+Minimum LSTAT 	: 1.98
+Maximum LSTAT 	: 37.97
+Mean LSTAT 	: 12.94
+Median LSTAT 	: 11.69
+STD of LSTAT 	: 7.07
+---- PTRATIO ----
+Minimum PTRATIO 	: 12.60
+Maximum PTRATIO 	: 22.00
+Mean PTRATIO 	: 18.52
+Median PTRATIO 	: 19.10
+STD of PTRATIO 	: 2.11
 </pre>
 </div>
 </div>
@@ -11932,9 +11966,14 @@ Standard deviation of prices: $165,171.13
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答: </strong></p>
-<p>RM越大，价格越高</p>
-<p>LSTAT越大，价格越低</p>
-<p>PTRATIO越大，价格越低</p>
+<p>1、RM越大，价格越高</p>
+<p>一般来讲，房屋越多，面积越大，甚至楼层也会变多，整体的建筑成本、装修成本都会更高</p>
+<p>2、LSTAT越大，价格越低</p>
+<p>如果房屋所在地区，低收入阶层人群较多，则房子的原始价格可能较低，更偏向经济适用，房屋面积和楼层、装修情况可能不会太好，这些都影响价格。
+另外受购买力制约，周边配套的商业设施也不会太高端，即配套设施较难反向拉动此区域的房屋价格。</p>
+<p>3、PTRATIO越大，价格越低</p>
+<p>即，PTRATIO越大，一个老师要教的学生人数越多，每个学生的人均老师数量越小，老师是教育资源中的稀缺资源，直接影响教学质量。
+现在家庭普遍重视孩子的教育，不惜多花钱买入教育资源优质、充足的区域，即学区。</p>
 
 </div>
 </div>
@@ -13831,8 +13870,12 @@ mZmZmZm1jG9OmZmZmZmZmZlZy/jmlJmZmZmZmZmZtYxvTpmZmZmZmZmZWcv45pSZmZmZmZmZmbXM
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>答案: </strong>
-当max_depth=10时，随着训练数据量的增加，训练曲线的评分接近0.8；测试曲线的评分在0.78左右，如果更多的测试集合，曲线将会收敛到特定值</p>
+<p><strong>答案: </strong></p>
+<p>当max_depth=10时，随着训练数据量的增加，训练曲线的评分变化不明显，从1.0慢慢降低到0.98左右；测试曲线，当训练数据量大于50，分数不再有大幅变化，预计0.78左右。
+如果有更多的训练数据，我预测训练分数和测试分数都不会有大幅度变化，训练分数会在0.9以上，接近1，测试分数将在0.7左右。</p>
+<p>max_depth=10时，可能存在过拟合的情况，导致模型在训练集上的分数很高（接近1），而泛化能力有限，测试分数在0.7上下较难提高。</p>
+<p>反观max_depth=1，可能存在欠拟合的情况，训练分数和测试分数都不高，两者收敛在0.4左右；</p>
+<p>而max_depth=3时，情况好得多，训练分数不是特别高，但是也在0.8左右，随着训练数据增多，两曲线收敛在0.8左右，模型的效果较好。</p>
 
 </div>
 </div>
@@ -14601,7 +14644,11 @@ gg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>答案: </strong></p>
-<p>当以最大深度1训练时，出现很大方差；当以最大深度10训练时，出现很大偏差、和很大方差</p>
+<p>1、当以最大深度1训练时，出现很大偏差</p>
+<p>因为分数训练分数和测试分数都很低，而且两分数较为接近
+可能是因为模型对数据关注不够，没有充分挖掘数据规律，即欠拟合</p>
+<p>2、当以最大深度10训练时，出现很大方差</p>
+<p>测试分数比训练分数低太多，训练分数较高，可能存在过拟合的情况</p>
 
 </div>
 </div>
@@ -14679,10 +14726,12 @@ gg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>答案: </strong></p>
-<p>K折交叉验证法，将所有样本分成K份，一般每份样本的数量相等，取一份作为测试样本，剩余K-1份作为训练样本，这个过程重复K次，把最后的结果综合在一起考虑，可以衡量模型性能。</p>
-<p>网格搜索过程中，用K折交叉验证可以提高训练数据利用率，帮助找到最优参数。</p>
-<p>网格搜索可以直接与交叉验证结合使用，方法调用时，传入交叉验证对象即可。</p>
-<p>如果网格搜索不使用交叉验证，最终的训练结果可能有一些影响。</p>
+<p>K折交叉验证法，将训练集分成K份，一般每份的数量相等，取一份作为验证集，剩余K-1份作为训练集，进行训练、验证的过程。
+这个过程重复K次，最终，取得K个结果，平均值即为这个模型的评分。</p>
+<p>优化模型时，这种方法可以用于判断模型的效果。</p>
+<p>在网格搜索过程中，对每个模型进行K折交叉验证，得到一个评分，最终N个网格算出N个得分，通过分数衡量效果，找到最优化的参数组合。</p>
+<p>K折交叉验证，可以提高数据利用率，每个训练数据都参与了模型训练，K次训练和验证，能够平均模型的泛化误差，尤其在样本资源有限的情况下，更为合适。</p>
+<p>如果不使用交叉验证，只使用简单交叉，比如在训练集合中留出20%的数据作为验证集，那么泛化误差可能会更大，对数据的利用率也降低。</p>
 <p>cv_results能告诉我们网格搜索过程中，每一次迭代训练的详情。</p>
 
 </div>
@@ -14908,7 +14957,14 @@ Predicted selling price for Client 3&#39;s home: $896,280.00
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>答案: </strong>合理</p>
+<p><strong>答案: </strong></p>
+<p>合理</p>
+<p>1、客户1，房子数量中等，贫困指数比平均值大一些，即穷人占比较平均值更多，教育资源比平均情况好，平均每个老师教的学生比平均值少。
+总体看较为中等，预测房价$420,622.22，其实也比较接近房屋的总平均值和中位数。</p>
+<p>2、客户2，房子数量较少，贫困指数非常大，穷人较多，教育资源较差。
+故房子价格较低，预测房价$235,122.22，考虑到穷人指数还不是最差（最差37.97）、房屋数量也不是最少，这个价格也还合理。</p>
+<p>3、客户3，房屋数量较多，贫困指数非常低，教育资源很好。
+故房子价格较高，预测房价$896,280.00，已远高平均值，虽然和最大值还有些差距，但是总体看也是比较合理的预测。</p>
 
 </div>
 </div>
@@ -15022,7 +15078,7 @@ Range in prices: $69,044.61
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">### 你的代码</span>
@@ -15044,8 +15100,6 @@ Range in prices: $69,044.61
 <span class="c1"># 让结果在notebook中显示</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="n">data</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
-
 <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
     <span class="c1"># Load the Boston housing dataset</span>
     <span class="c1"># 载入北京房屋的数据集</span>
@@ -15053,11 +15107,7 @@ Range in prices: $69,044.61
     <span class="n">prices</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span>
     <span class="n">features</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="c1">#print features</span>
-    <span class="c1">#print prices</span>
-
     <span class="c1"># Success</span>
-    <span class="c1"># 完成</span>
     <span class="k">print</span> <span class="s2">&quot;Beijing housing dataset has {} data points with {} variables each.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
     <span class="c1"># TODO: Minimum price of the data</span>
@@ -15082,21 +15132,20 @@ Range in prices: $69,044.61
 
     <span class="c1"># Show the calculated statistics</span>
     <span class="c1">#目标：输出计算的结果</span>
-    <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">print</span> <span class="s2">&quot;Statistics for Beijing housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="k">print</span> <span class="s2">&quot;Minimum price: {:,.2f}w&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">minimum_price</span><span class="p">)</span>
     <span class="k">print</span> <span class="s2">&quot;Maximum price: {:,.2f}w&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maximum_price</span><span class="p">)</span>
     <span class="k">print</span> <span class="s2">&quot;Mean price: {:,.2f}w&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mean_price</span><span class="p">)</span>
     <span class="k">print</span> <span class="s2">&quot;Median price {:,.2f}w&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">median_price</span><span class="p">)</span>
     <span class="k">print</span> <span class="s2">&quot;Standard deviation of prices: {:,.2f}w&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">std_price</span><span class="p">)</span>
 
-    <span class="c1">#print data</span>
-
     <span class="c1"># TODO: Shuffle and split the data into training and testing subsets</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-
+    
     <span class="c1"># Success</span>
     <span class="k">print</span> <span class="s2">&quot;Training and testing split was successful.&quot;</span>
 
+    <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
 
 <span class="k">def</span> <span class="nf">performance_metric</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Calculates and returns the performance score between </span>
@@ -15117,7 +15166,7 @@ Range in prices: $69,044.61
     <span class="n">cv_sets</span> <span class="o">=</span> <span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">n_splits</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a decision tree regressor object</span>
-    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
@@ -15140,10 +15189,10 @@ Range in prices: $69,044.61
 <span class="sd">        decision tree regressor trained on the input data [X, y]. &quot;&quot;&quot;</span>
     
     <span class="c1"># Create cross-validation sets from the training data</span>
-    <span class="n">kfold</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">kfold</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a decision tree regressor object</span>
-    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
@@ -15163,25 +15212,27 @@ Range in prices: $69,044.61
     <span class="k">return</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_estimator_</span>
 
 
-<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s2">&quot;Training with shuffle cv......&quot;</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;Training with shuffle cv...... len(X_train) = &quot;</span><span class="p">,</span> \
+        <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="s2">&quot;, len(X_test) = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     <span class="n">reg_shuffle</span> <span class="o">=</span> <span class="n">fit_model_shuffle</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-    <span class="k">print</span> <span class="s2">&quot;Training with kfold cv......&quot;</span>
+    <span class="k">print</span> <span class="s2">&quot;Training with kfold cv...... len(X_train) = &quot;</span><span class="p">,</span> \
+        <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="s2">&quot;, len(X_test) = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     <span class="n">reg_kfold</span> <span class="o">=</span> <span class="n">fit_model_kfold</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
     <span class="k">print</span> <span class="s2">&quot;Parameter &#39;max_depth&#39; is {} for the optimal model (shuffle).&quot;</span> \
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reg_shuffle</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">])</span>    
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reg_shuffle</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">])</span>
     <span class="k">print</span> <span class="s2">&quot;Parameter &#39;max_depth&#39; is {} for the optimal model (kfold).&quot;</span> \
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reg_kfold</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">])</span>    
-        
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reg_kfold</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">])</span>
+
     <span class="k">print</span> <span class="s2">&quot;Test result R^2 with shuffle cv = &quot;</span><span class="p">,</span> <span class="n">performance_metric</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">reg_shuffle</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
     <span class="k">print</span> <span class="s2">&quot;Test result R^2 with kfold cv = &quot;</span><span class="p">,</span> <span class="n">performance_metric</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">reg_kfold</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">init</span><span class="p">()</span>
-    <span class="n">test</span><span class="p">()</span>
+    <span class="n">data</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
 </pre></div>
@@ -15197,7 +15248,7 @@ Range in prices: $69,044.61
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Beijing housing dataset has 9999 data points with 7 variables each.
-Statistics for Boston housing dataset:
+Statistics for Beijing housing dataset:
 
 Minimum price: 66.00w
 Maximum price: 7,450.00w
@@ -15205,12 +15256,12 @@ Mean price: 342.08w
 Median price 280.00w
 Standard deviation of prices: 259.39w
 Training and testing split was successful.
-Training with shuffle cv......
-Training with kfold cv......
+Training with shuffle cv...... len(X_train) =  7999 , len(X_test) =  2000
+Training with kfold cv...... len(X_train) =  7999 , len(X_test) =  2000
 Parameter &#39;max_depth&#39; is 8 for the optimal model (shuffle).
 Parameter &#39;max_depth&#39; is 5 for the optimal model (kfold).
-Test result R^2 with shuffle cv =  0.585851924508
-Test result R^2 with kfold cv =  0.706514163353
+Test result R^2 with shuffle cv =  0.602379728245
+Test result R^2 with kfold cv =  0.691230653656
 </pre>
 </div>
 </div>
@@ -15237,8 +15288,7 @@ Test result R^2 with kfold cv =  0.706514163353
 <p><strong>答案：</strong></p>
 <p>1、用新的数据集构建了模型</p>
 <p>2、能够对测试数据进行验证</p>
-<p>3、模型不太稳定，每次训练、测试，结果有不同</p>
-<p>4、K折交叉验证多数情况下能够提升R^2，但是偶尔出现K折验证不如shuffle验证的情况</p>
+<p>3、K折交叉验证多数情况下能够提升R^2，但是也有K折验证不如shuffle验证的情况</p>
 
 </div>
 </div>
